@@ -1,0 +1,147 @@
+.footage {
+  padding-top: 72px;
+  &__photo {
+    display: flex;
+    margin-top: 40px;
+  }
+  &__photosItems {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  &__photoMain {
+    height: 588px;
+    min-width: 588px;
+    background-image: url("../../images/footage/mainFootage.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  &__photoItem {
+    height: 282px;
+    width: 282px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left: 24px;
+  }
+  &__photoItem_1 {
+    background-image: url("../../images/footage/Photo1.png");
+  }
+  &__photoItem_2 {
+    background-image: url("../../images/footage/Photo2.png");
+  }
+  &__photoItem_3 {
+    background-image: url("../../images/footage/Photo3.png");
+    margin-top: 24px;
+  }
+  &__photoItem_4 {
+    margin-top: 24px;
+    background-image: url("../../images/footage/Photo4.png");
+  }
+  &__btn {
+    align-self: center;
+    width: 100%;
+    height: 56px;
+    color: #ffffff;
+    border: 1px solid rgba(236, 63, 63, 0.8);
+    background: rgba(236, 63, 63, 0.15);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "FuturaPTBook";
+    margin-top: 32px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .footage {
+    padding-top: 64px;
+    &__photo {
+      margin-top: 24px;
+    }
+    &__title {
+      font-size: 32px;
+    }
+    &__photoMain {
+      height: 314px;
+      min-width: 312px;
+    }
+    &__photoItem {
+      height: 148px;
+      width: 148px;
+      margin-left: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  .footage {
+    padding-top: 64px;
+    &__photo {
+      flex-direction: column;
+      margin-top: 24px;
+    }
+    &__title {
+      font-size: 32px;
+    }
+    &__photoMain {
+      height: 212px;
+      min-width: 0px;
+      margin-bottom: 16px;
+    }
+    &__photoItem {
+      height: 212px;
+      width: 328px;
+      margin-left: 0px;
+      margin-bottom: 16px;
+    }
+    &__photoItem:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  .footage {
+    padding-bottom: 0px;
+    &__container {
+      width: 100%;
+      margin: 0;
+    }
+    &__photoMain {
+      background-image: url("../../images/footage/Photo1360.png");
+    }
+    &__photoItem_1 {
+      background-image: url("../../images/footage/Photo2360.png");
+    }
+    &__photoItem_2 {
+      background-image: url("../../images/footage/Photo\ 3360.png");
+    }
+    &__title {
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 36px;
+      margin-bottom: 24px;
+      width: 200px;
+      text-align: left;
+    }
+    &__ymap {
+      height: 400px;
+    }
+    &__photoItem_3 {
+      display: none;
+    }
+    &__photoItem_4 {
+      display: none;
+    }
+    &__btn {
+      margin-top: 24px;
+    }
+  }
+}

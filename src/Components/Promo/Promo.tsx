@@ -1,6 +1,8 @@
+import { FC } from "react";
+import Button from "../Button/Button";
 import "./Promo.scss";
 
-const Promo = () => {
+const Promo: FC = () => {
   return (
     <div className="promo">
       <div className="container">
@@ -11,7 +13,7 @@ const Promo = () => {
             идет навстречу своей судьбе в неспокойном мире, где люди часто
             оказываются куда коварнее чудовищ.
           </p>
-          <button className="promo__btn"> Смотреть сериал</button>
+          <Button nameClass={"promo__btn"} content={"Смотреть сериал"} />
         </div>
       </div>
     </div>

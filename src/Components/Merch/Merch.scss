@@ -1,0 +1,51 @@
+.map {
+  padding-top: 72px;
+  padding-bottom: 96px;
+  &__ymap {
+    width: 100%;
+    height: 540px;
+  }
+  &__title {
+    display: flex;
+    justify-content: flex-start;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .map {
+    padding-bottom: 0px;
+    &__container {
+      width: 100%;
+      margin: 0;
+    }
+    &__ymap {
+      height: 400px;
+    }
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  .map {
+    padding-top: 48px;
+    padding-bottom: 0px;
+    &__container {
+      width: 100%;
+      margin: 0;
+    }
+    &__title {
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 36px;
+      margin-bottom: 24px;
+      width: 200px;
+      text-align: left;
+    }
+    &__ymap {
+      height: 400px;
+    }
+  }
+}

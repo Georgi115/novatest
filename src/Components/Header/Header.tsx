@@ -1,13 +1,16 @@
 import "./Header.scss";
-import headerImg from "../../images/headerImg.png";
 
-const Header = () => {
+import Button from "../Button/Button";
+import LogoImg from "../Logoimg/LogoImg";
+import { FC } from "react";
+
+const Header: FC = () => {
   return (
     <header className="header">
       <div className="container">
         <div className="header__content">
-          <img className="header__img" src={headerImg} alt="header-img"></img>
-          <button className="header__btn">Подключить подписку</button>{" "}
+          <LogoImg nameClass={"header__img"} />
+          <Button nameClass={"header__btn"} content={"Подключить подписку"} />
         </div>
       </div>
     </header>

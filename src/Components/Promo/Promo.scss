@@ -43,3 +43,45 @@
     font-family: "FuturaPTBook";
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .promo {
+    background-image: url("../../images/promo768.png");
+    &__descriptionBlock {
+      width: 370px;
+    }
+    &__title {
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 40px;
+      margin-bottom: 16px;
+    }
+    &__description {
+      margin-bottom: 32px;
+      height: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  .promo {
+    background-image: url("../../images/promo360.png");
+    &__descriptionBlock {
+      width: 280px;
+    }
+    &__title {
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 38px;
+      margin-bottom: 6px;
+    }
+    &__description {
+      margin-bottom: 34px;
+      height: auto;
+    }
+    &__btn {
+      width: 186px;
+      height: 48px;
+    }
+  }
+}

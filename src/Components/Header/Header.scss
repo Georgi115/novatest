@@ -23,3 +23,25 @@
     font-family: "FuturaPTBook";
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .header {
+    height: 72px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  .header {
+    &__img {
+      width: 106px;
+      height: 36px;
+    }
+    &__btn {
+      width: 209px;
+      margin-left: 12.5px;
+    }
+    &__content {
+      justify-content: flex-start;
+    }
+  }
+}

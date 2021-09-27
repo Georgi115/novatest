@@ -1,6 +1,5 @@
 .cast {
-  height: 800px;
-  margin-top: 72px;
+  padding-top: 72px;
   &__textTitle {
     display: flex;
     align-items: center;
@@ -14,7 +13,7 @@
   }
   &__stripe {
     height: 2px;
-    min-width: 1200px;
+    min-width: 100%;
     background-color: #615e5e;
   }
   &__progressStripe {
@@ -28,5 +27,150 @@
   }
   &__arrowActive {
     color: #ec3f3f;
+  }
+  &__photo {
+    margin-top: 32px;
+  }
+  &__photoList {
+    display: flex;
+  }
+  &__photoItem {
+    height: 400px;
+    min-width: 282px;
+    background-color: white;
+    margin-right: 24px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+  }
+  &__photoItem_vedmak {
+    background-image: url("../../images/genri.png");
+  }
+  &__photoItem_lutik {
+    background-image: url("../../images//Lutik.png");
+  }
+  &__photoItem_anna {
+    background-image: url("../../images/anna.png");
+  }
+  &__photoItem_ciri {
+    background-image: url("../../images/ciri.png");
+  }
+  &__photoItem_bart {
+    background-image: url("../../images/bart.png");
+  }
+  &__character {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: left;
+  }
+  &__nameActor {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: left;
+  }
+  &__textActor {
+    padding: 0px 0px 32px 24px;
+    position: relative;
+    z-index: 1;
+  }
+  &__photoItem:hover {
+    align-items: flex-start;
+    .cast__textActor {
+      padding: 24px 0px 0px 24px;
+    }
+    .cast__backBlockPhoto {
+      display: flex;
+    }
+  }
+
+  &__backBlockPhoto {
+    z-index: 0;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.486);
+    align-items: flex-end;
+    padding: 0px 0px 32px 24px;
+  }
+
+  &__backBlockPhotoText {
+    text-align: left;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    width: 224px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .cast {
+    padding-top: 64px;
+    &__text {
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 40px;
+    }
+    &__stripe {
+      width: 100%;
+    }
+    &__progressStripe {
+      width: 314px;
+    }
+    &__photoItem {
+      height: 400px;
+      min-width: 256px;
+    }
+    &__nameActor {
+      font-size: 20px;
+    }
+    &__character {
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  .cast {
+    padding-top: 16px;
+    &__textTitle {
+      margin-bottom: 24px;
+    }
+    &__arrowLeft {
+      margin-right: 11px;
+    }
+    &__text {
+      text-align: left;
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 36px;
+      margin-right: 50px;
+    }
+    &__stripe {
+      width: 100%;
+    }
+    &__progressStripe {
+      width: 161px;
+    }
+    &__photoItem {
+      height: 280px;
+      min-width: 216px;
+    }
+    &__nameActor {
+      font-size: 16px;
+    }
+    &__character {
+      font-size: 16px;
+    }
+    &__textActor {
+      padding: 0px 0px 16px 16px;
+    }
   }
 }
