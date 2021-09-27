@@ -1,0 +1,32 @@
+.cast {
+  height: 800px;
+  margin-top: 72px;
+  &__textTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  &__text {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+  }
+  &__stripe {
+    height: 2px;
+    min-width: 1200px;
+    background-color: #615e5e;
+  }
+  &__progressStripe {
+    background-color: #ec3f3f;
+    width: 588px;
+    height: 100%;
+  }
+  &__arrowLeft {
+    margin-right: 39px;
+    color: #615e5e;
+  }
+  &__arrowActive {
+    color: #ec3f3f;
+  }
+}

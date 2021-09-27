@@ -1,0 +1,45 @@
+.promo {
+  background-image: url("../../images/promoImg.png");
+  height: 440px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  &__descriptionBlock {
+    width: 424px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 104px;
+  }
+  &__title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 56px;
+    margin-bottom: 24px;
+    text-align: left;
+    width: 100%;
+  }
+  &__description {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 40px;
+    height: 60px;
+    text-align: left;
+  }
+  &__btn {
+    background: #ec3f3f;
+    width: 204px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffff;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    align-self: flex-start;
+    font-family: "FuturaPTBook";
+  }
+}
