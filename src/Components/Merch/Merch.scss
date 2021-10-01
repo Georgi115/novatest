@@ -15,7 +15,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1440px) {
+@media screen and (min-width: 450px) and (max-width: 1000px) {
   .map {
     padding-bottom: 0px;
     &__container {
@@ -28,7 +28,7 @@
   }
 }
 
-@media screen and (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 450px) {
   .map {
     padding-top: 48px;
     padding-bottom: 0px;
@@ -41,7 +41,7 @@
       font-size: 28px;
       line-height: 36px;
       margin-bottom: 24px;
-      width: 200px;
+      width: 300px;
       text-align: left;
     }
     &__ymap {

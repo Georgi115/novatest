@@ -3,6 +3,7 @@
   &__photo {
     display: flex;
     margin-top: 40px;
+    margin-bottom: 32px;
   }
   &__photosItems {
     display: flex;
@@ -14,6 +15,11 @@
     line-height: 48px;
     display: flex;
     justify-content: flex-start;
+    width: 100%;
+  }
+  &__title > p {
+    width: 100%;
+    text-align: left;
   }
   &__photoMain {
     height: 588px;
@@ -55,11 +61,13 @@
     font-size: 16px;
     line-height: 24px;
     font-family: "FuturaPTBook";
-    margin-top: 32px;
+  }
+  &__btn:hover {
+    background-color: #ff1e1e;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1440px) {
+@media screen and (min-width: 450px) and (max-width: 1000px) {
   .footage {
     padding-top: 64px;
     &__photo {
@@ -80,15 +88,13 @@
   }
 }
 
-@media screen and (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 450px) {
   .footage {
     padding-top: 64px;
+    padding-bottom: 0;
     &__photo {
       flex-direction: column;
       margin-top: 24px;
-    }
-    &__title {
-      font-size: 32px;
     }
     &__photoMain {
       height: 212px;
@@ -104,12 +110,7 @@
     &__photoItem:last-child {
       margin-bottom: 0px;
     }
-  }
-}
 
-@media screen and (min-width: 0px) and (max-width: 767px) {
-  .footage {
-    padding-bottom: 0px;
     &__container {
       width: 100%;
       margin: 0;
@@ -128,7 +129,6 @@
       font-size: 28px;
       line-height: 36px;
       margin-bottom: 24px;
-      width: 200px;
       text-align: left;
     }
     &__ymap {

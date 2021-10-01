@@ -1,5 +1,4 @@
 import "./Header.scss";
-
 import Button from "../Button/Button";
 import LogoImg from "../Logoimg/LogoImg";
 import { FC } from "react";

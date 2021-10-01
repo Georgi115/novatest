@@ -18,14 +18,24 @@
   }
   &__progressStripe {
     background-color: #ec3f3f;
-    width: 588px;
+    width: 400px;
     height: 100%;
+    transition: 0.8s ease;
   }
+
   &__arrowLeft {
     margin-right: 39px;
     color: #615e5e;
+    cursor: pointer;
+  }
+  &__arrowRight {
+    color: #615e5e;
+    cursor: pointer;
   }
   &__arrowActive {
+    color: #ec3f3f;
+  }
+  &__arrowActive:hover {
     color: #ec3f3f;
   }
   &__photo {
@@ -33,6 +43,7 @@
   }
   &__photoList {
     display: flex;
+    transition: 0.3s ease;
   }
   &__photoItem {
     height: 400px;
@@ -46,20 +57,8 @@
     align-items: flex-end;
     position: relative;
   }
-  &__photoItem_vedmak {
-    background-image: url("../../images/genri.png");
-  }
-  &__photoItem_lutik {
-    background-image: url("../../images//Lutik.png");
-  }
-  &__photoItem_anna {
-    background-image: url("../../images/anna.png");
-  }
-  &__photoItem_ciri {
-    background-image: url("../../images/ciri.png");
-  }
-  &__photoItem_bart {
-    background-image: url("../../images/bart.png");
+  &__photoItem:last-child {
+    margin-right: 0px;
   }
   &__character {
     font-weight: 600;
@@ -110,7 +109,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1440px) {
+@media screen and (min-width: 450px) and (max-width: 1000px) {
   .cast {
     padding-top: 64px;
     &__text {
@@ -122,7 +121,19 @@
       width: 100%;
     }
     &__progressStripe {
-      width: 314px;
+      width: 128px;
+    }
+    &__progressStripePositionTwo {
+      width: 256px;
+    }
+    &__progressStripePositionThree {
+      width: 384px;
+    }
+    &__progressStripePositionFour {
+      width: 512px;
+    }
+    &__progressStripePositionFive {
+      width: 640px;
     }
     &__photoItem {
       height: 400px;
@@ -134,10 +145,22 @@
     &__character {
       font-size: 20px;
     }
+    &__photo_positionTwo {
+      transform: translateX(-176px);
+    }
+    &__photo_positionThree {
+      transform: translateX(-457px);
+    }
+    &__photoPositionFour {
+      transform: translateX(-737px);
+    }
+    &__photoPositionFive {
+      transform: translateX(-1017px);
+    }
   }
 }
 
-@media screen and (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 450px) {
   .cast {
     padding-top: 16px;
     &__textTitle {
@@ -157,7 +180,22 @@
       width: 100%;
     }
     &__progressStripe {
-      width: 161px;
+      width: 54.5px;
+    }
+    &__progressStripePositionTwo {
+      width: 109px;
+    }
+    &__progressStripePositionThree {
+      width: 163.5px;
+    }
+    &__progressStripePositionFour {
+      width: 218px;
+    }
+    &__progressStripePositionFive {
+      width: 272.5px;
+    }
+    &__progressStripePositionSix {
+      width: 100%;
     }
     &__photoItem {
       height: 280px;
@@ -171,6 +209,21 @@
     }
     &__textActor {
       padding: 0px 0px 16px 16px;
+    }
+    &__photo_positionTwo {
+      transform: translateX(-128px);
+    }
+    &__photo_positionThree {
+      transform: translateX(-368px);
+    }
+    &__photoPositionFour {
+      transform: translateX(-608px);
+    }
+    &__photoPositionFive {
+      transform: translateX(-848px);
+    }
+    &__photoPositionSix {
+      transform: translateX(-1088px);
     }
   }
 }

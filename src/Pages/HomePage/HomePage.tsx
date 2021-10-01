@@ -5,18 +5,22 @@ import Cast from "../../Components/Cust/Cast";
 import Footage from "../../Components/Footage/Footage";
 import Merch from "../../Components/Merch/Merch";
 import Footer from "../../Components/Footer/Footer";
-import { FC } from "react";
+import React, { FC } from "react";
+import ApplicationPage from "../ApplicationPage/ApplicationPage";
 
 const HomePage: FC = () => {
   return (
-    <div className="HomePage">
-      <Header />
-      <Promo />
-      <Cast />
-      <Footage />
-      <Merch />
-      <Footer />
-    </div>
+    <React.Fragment>
+      <div className="HomePage">
+        <Header />
+        <Promo />
+        <Cast />
+        <Footage />
+        <Merch />
+        <Footer />
+      </div>
+      <ApplicationPage />
+    </React.Fragment>
   );
 };
 

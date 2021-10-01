@@ -34,13 +34,13 @@ ul {
   height: 100%;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1440px) {
+@media screen and (min-width: 450px) and (max-width: 1000px) {
   .container {
     width: 640px;
   }
 }
 
-@media screen and (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 450px) {
   .container {
     width: 328px;
   }

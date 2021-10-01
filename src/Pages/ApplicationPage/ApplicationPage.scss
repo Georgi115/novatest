@@ -1,0 +1,9 @@
+.applicationPage {
+  min-width: 1440px;
+  background-color: #000000;
+  &__header {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 22px;
+  }
+}

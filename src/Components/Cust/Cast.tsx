@@ -1,6 +1,60 @@
-import { FC } from "react";
+import React, { FC, useEffect } from "react";
+import {
+  changePosition,
+  ICastArr,
+  IChangePosition,
+} from "../../redux/sliderSlice";
+import { useAppDispatch } from "../../redux";
 import "./Cast.scss";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux";
+import {
+  positionCast,
+  positionProgressStripe,
+} from "../../helpers/positionCastElement";
+
 const Cast: FC = () => {
+  const dispatch = useAppDispatch();
+  //selectors
+  const position = useSelector(
+    (state: RootState): number => state.sliderSlice.position
+  );
+  const widthScreen = useSelector(
+    (state: RootState): number => state.sliderSlice.widthScreen
+  );
+  const maxPosition = useSelector(
+    (state: RootState): number => state.sliderSlice.maxPosition
+  );
+  const castArray = useSelector(
+    (state: RootState): ICastArr[] => state.sliderSlice.castArray
+  );
+  const positionTransfromCastPhoto = useSelector(
+    (state: RootState) => state.sliderSlice.positionCastPhoto
+  );
+  const widthStripe = useSelector(
+    (state: RootState) => state.sliderSlice.widthProgressStripe
+  );
+  //selectors
+  //handlers
+  const changePositionClick = (e: React.MouseEvent, obj: IChangePosition) => {
+    dispatch(changePosition(obj));
+  };
+  //handlers
+
+  const positionCastPhoto = positionCast(widthScreen, position);
+  const widthProgressStripe = positionProgressStripe(widthScreen, maxPosition);
+  useEffect(() => {
+    dispatch(
+      changePosition({
+        widthProgressStripe: widthProgressStripe,
+        positionCastPhoto: 0,
+        num: 0,
+      })
+    );
+  }, []);
+
+  const classLeftArrow = position !== 1 ? "cast__arrowActive" : null;
+  const classRightArrow = position !== maxPosition ? "cast__arrowActive" : null;
   return (
     <div className="cast">
       <div className="container">
@@ -8,97 +62,58 @@ const Cast: FC = () => {
           <div className="cast__textTitle">
             <p className="cast__text">Актерский состав</p>
             <div className="cast__arrows">
-              <i className="fa fa-angle-left fa-3x cast__arrowLeft "></i>
-              <i className="fa fa-angle-right fa-3x cast__cast__arrowRight cast__arrowActive"></i>
+              <i
+                onClick={(e) =>
+                  changePositionClick(e, {
+                    positionCastPhoto: positionCastPhoto,
+                    num: -1,
+                    widthProgressStripe: -widthProgressStripe,
+                  })
+                }
+                className={`fa fa-angle-left fa-3x cast__arrowLeft ${classLeftArrow}`}
+              ></i>
+              <i
+                onClick={(e) =>
+                  changePositionClick(e, {
+                    positionCastPhoto: -positionCastPhoto,
+                    num: 1,
+                    widthProgressStripe: widthProgressStripe,
+                  })
+                }
+                className={`fa fa-angle-right fa-3x cast__arrowRight ${classRightArrow}`}
+              ></i>
             </div>
           </div>
           <div className="cast__stripe">
-            <div className="cast__progressStripe"></div>
+            <div
+              style={{ width: `${widthStripe}px` }}
+              className={`cast__progressStripe`}
+            ></div>
           </div>
         </div>
 
-        <div className="cast__photo">
-          <ul className="cast__photoList">
-            <li className="cast__photoItem cast__photoItem_vedmak">
-              <div className="cast__textActor">
-                <p className="cast__character">Геральт</p>
-                <p className="cast__nameActor">Генри Кавилл</p>{" "}
-              </div>
-              <div className="cast__backBlockPhoto">
-                <p className="cast__backBlockPhotoText">
-                  Геральт — одинокий охотник на чудовищ, который отчаянно
-                  пытается найти место в мире, где люди зачастую оказываются
-                  хуже монстров.
-                </p>
-              </div>
-            </li>
-            <li className="cast__photoItem cast__photoItem_lutik">
-              <div className="cast__textActor">
-                <p className="cast__character">Лютик</p>
-                <p className="cast__nameActor">Джоэ Бэти</p>
-              </div>
-              <div className="cast__backBlockPhoto">
-                <p className="cast__backBlockPhotoText">
-                  Один из центральных персонажей сериала, лучший друг и
-                  неизменный спутник Геральта, трубадур и бабник
-                </p>
-              </div>
-            </li>
-            <li className="cast__photoItem cast__photoItem_anna">
-              <div className="cast__textActor">
-                <p className="cast__character">Йеннифэр</p>
-                <p className="cast__nameActor">Аня Чалотра</p>
-              </div>
-              <div className="cast__backBlockPhoto">
-                <p className="cast__backBlockPhotoText">
-                  Персонаж сериала «Ведьмак», чародейка, обучавшаяся магии в
-                  школе для юных волшебниц Аретуза под руководством Тиссаи де
-                  Врие.
-                </p>
-              </div>
-            </li>
-            <li className="cast__photoItem cast__photoItem_ciri">
-              <div className="cast__textActor">
-                <p className="cast__character">Цири</p>
-                <p className="cast__nameActor">Фрейя Аллан</p>
-              </div>
-              <div className="cast__backBlockPhoto">
-                <p className="cast__backBlockPhotoText">
-                  Цири — дочь Паветты и Дани, внучка королевы Цинтры Калантэ.
-                  Цири любила сбегать из дворца и играть в городе с мальчишками,
-                  живо интересовалась военно-политическими обсуждениями бабушки,
-                  негодуя из-за того, что в её возрасте бабушка была уже
-                  знаменита своими подвигами, а её держат во дворце.
-                </p>
-              </div>
-            </li>
-            <li className="cast__photoItem cast__photoItem_bart">
-              <div className="cast__textActor">
-                <p className="cast__character">Эмгыр вар Эмрейс</p>
-                <p className="cast__nameActor">Барт Эдвардс</p>
-              </div>
-              <div className="cast__backBlockPhoto">
-                <p className="cast__backBlockPhotoText">
-                  Персонаж сериала «Ведьмак», мужчина, на которого было наложено
-                  заклятье, превращающее его в человекоподобного ежа.
-                </p>
-              </div>
-            </li>
-            <li className="cast__photoItem cast__photoItem_ciri">
-              <div className="cast__textActor">
-                <p className="cast__character">Цири</p>
-                <p className="cast__nameActor">Фрейя Аллан</p>
-              </div>
-              <div className="cast__backBlockPhoto">
-                <p className="cast__backBlockPhotoText">
-                  Цири — дочь Паветты и Дани, внучка королевы Цинтры Калантэ.
-                  Цири любила сбегать из дворца и играть в городе с мальчишками,
-                  живо интересовалась военно-политическими обсуждениями бабушки,
-                  негодуя из-за того, что в её возрасте бабушка была уже
-                  знаменита своими подвигами, а её держат во дворце.
-                </p>
-              </div>
-            </li>
+        <div className="cast__photo ">
+          <ul
+            style={{ transform: `translateX(${positionTransfromCastPhoto}px)` }}
+            className={`cast__photoList ${positionCastPhoto}`}
+          >
+            {castArray.map((el, id) => {
+              return (
+                <li
+                  key={id}
+                  style={{ backgroundImage: `url(${el.img})` }}
+                  className="cast__photoItem cast__photoItem_ciri"
+                >
+                  <div className="cast__textActor">
+                    <p className="cast__character">{el.characterName}</p>
+                    <p className="cast__nameActor">{el.actorName}</p>
+                  </div>
+                  <div className="cast__backBlockPhoto">
+                    <p className="cast__backBlockPhotoText">{el.description}</p>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
