@@ -1,10 +1,13 @@
 import "./App.scss";
+import { Route } from "react-router";
 import HomePage from "./Pages/HomePage/HomePage";
+import ApplicationPage from "./Pages/ApplicationPage/ApplicationPage";
 
 function App() {
   return (
     <div className="App">
-      <HomePage />
+      <Route exact path="/" render={() => <HomePage />} />
+      <Route path="/application" render={() => <ApplicationPage />}></Route>
     </div>
   );
 }

@@ -1,0 +1,85 @@
+.contacts {
+  margin-left: 126px;
+  text-align: left;
+  margin-top: 104px;
+  &__hotLine > p:first-child {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+  &__hotLine > p:last-child {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 32px;
+  }
+  &__address > p:first-child {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+  &__address > p:last-child {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 32px;
+  }
+  &__openingHours > p:first-child {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+  &__openingHours > p:last-child {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 1000px) {
+  .contacts {
+    margin-left: 53px;
+    &__hotLine > p:last-child {
+      font-size: 24px;
+      line-height: 40px;
+    }
+    &__address > p:last-child {
+      font-size: 24px;
+      line-height: 40px;
+    }
+    &__openingHours > p:last-child {
+      font-size: 24px;
+      line-height: 40px;
+    }
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 450px) {
+  .contacts {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 40px;
+    &__hotLine > p:last-child {
+      font-size: 28px;
+      line-height: 40px;
+    }
+    &__address > p:last-child {
+      font-size: 24px;
+      line-height: 40px;
+    }
+    &__openingHours > p:last-child {
+      font-size: 24px;
+      line-height: 40px;
+    }
+  }
+}

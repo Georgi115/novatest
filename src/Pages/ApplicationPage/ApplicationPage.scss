@@ -6,4 +6,32 @@
     justify-content: flex-start;
     padding-top: 22px;
   }
+  &__content {
+    margin-top: 62px;
+    padding-bottom: 88px;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 1000px) {
+  .applicationPage {
+    min-width: 768px;
+  }
+  &__content {
+    justify-content: space-between;
+  }
+  &__content {
+    margin-top: 43px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 450px) {
+  .applicationPage {
+    min-width: 360px;
+    &__content {
+      display: block;
+      padding-bottom: 56px;
+      margin-top: 34px;
+    }
+  }
 }

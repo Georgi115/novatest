@@ -1,0 +1,260 @@
+.applicationForm {
+  width: 486px;
+
+  &__title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 56px;
+    text-align: left;
+  }
+  &__form {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  &__form input {
+    height: 56px;
+    font-family: "FuturaPTBook";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    outline: none;
+    border: none;
+    padding: 18px 10px 18px 24px;
+    color: #ffff;
+  }
+  &__phoneAndEmail {
+    margin-top: 32px;
+  }
+  &__name {
+    width: 100%;
+    margin-top: 32px;
+  }
+  &__email {
+    width: 231px;
+    margin-right: 24px;
+  }
+  &__phone {
+    width: 231px;
+  }
+  &__text {
+    height: 156px !important;
+    width: 100% !important;
+    margin-top: 32px;
+    font-family: "FuturaPTBook";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    outline: none;
+    border: none;
+    padding: 18px 10px 18px 24px;
+    color: #ffff;
+  }
+  &__file {
+    margin-top: 32px;
+  }
+  &__label {
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 56px;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    text-align: left;
+    padding: 18px 24px 18px 24px;
+    margin-top: 32px;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__checkbox {
+    position: relative;
+    height: 32px;
+    display: flex;
+    margin-top: 32px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  &__inputCheckbox {
+    display: none;
+  }
+  &__btn {
+    height: 56px;
+    width: 205px;
+    outline: none;
+    border: none;
+    background-color: #ec3f3f;
+    color: white;
+    font-family: "FuturaPTBook";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 40px;
+  }
+  &__select {
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 56px;
+    outline: none;
+    border: none;
+    color: #ffff;
+    padding: 18px 24px 18px 24px;
+    appearance: none;
+    width: 100%;
+    font-family: "FuturaPTBook";
+    position: relative;
+    z-index: 2;
+    font-size: 16px;
+  }
+  &__checkboxLabel {
+    display: flex;
+    align-items: center;
+    margin-left: 52px;
+  }
+  &__checkboxLabel::before {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  &__checkboxLabel::after {
+    content: url("../../images/check.png");
+
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+  }
+  &__inputCheckbox:checked + .applicationForm__checkboxLabel::after {
+    opacity: 1;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  &__selectBlock {
+    position: relative;
+    margin-top: 48px;
+  }
+}
+
+.fa-angle-down {
+  position: absolute;
+  top: 20px;
+  z-index: 1;
+  right: 24px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+@media screen and (min-width: 450px) and (max-width: 1000px) {
+  .applicationForm {
+    min-width: 320px;
+    &__phoneAndEmail {
+      display: flex;
+      flex-direction: column;
+    }
+    &__email {
+      width: 100%;
+      margin-bottom: 24px;
+    }
+    &__selectBlock {
+      margin-top: 36px;
+    }
+    &__name {
+      margin-top: 24px;
+    }
+    &__phoneAndEmail {
+      margin-top: 24px;
+    }
+    &__phone {
+      width: 100%;
+    }
+    &__title {
+      font-size: 40px;
+      line-height: 40px;
+      width: 288px;
+    }
+    &__text {
+      margin-top: 24px;
+    }
+    &__label {
+      margin-top: 24px;
+    }
+    &__checkbox {
+      margin-top: 24px;
+    }
+    &__checkboxLabel {
+      text-align: left;
+    }
+    &__btn {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 450px) {
+  .applicationForm {
+    width: 100%;
+    &__phoneAndEmail {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__email {
+      width: 100%;
+      margin-bottom: 24px;
+    }
+    &__selectBlock {
+      margin-top: 36px;
+    }
+    &__name {
+      margin-top: 24px;
+    }
+    &__phoneAndEmail {
+      margin-top: 24px;
+    }
+    &__phone {
+      width: 100%;
+    }
+    &__title {
+      font-size: 32px;
+
+      width: 100%;
+    }
+    &__text {
+      margin-top: 24px;
+    }
+    &__label {
+      margin-top: 24px;
+    }
+    &__checkbox {
+      margin-top: 24px;
+    }
+    &__checkboxLabel {
+      text-align: left;
+    }
+    &__btn {
+      width: 100%;
+    }
+  }
+}
