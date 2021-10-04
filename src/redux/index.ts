@@ -1,11 +1,13 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import sliderSlice from "./sliderSlice";
 import footageSlice from "./footageSlice";
+import FormSlice from "./FormSlice";
 import { useDispatch } from "react-redux";
 
 const rootReducer = combineReducers({
   sliderSlice,
   footageSlice,
+  FormSlice,
 });
 
 export const store = configureStore({

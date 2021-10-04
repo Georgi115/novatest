@@ -26,12 +26,19 @@
     padding: 18px 10px 18px 24px;
     color: #ffff;
   }
+  &__form input::placeholder {
+    font-family: Futura PT;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+  }
   &__phoneAndEmail {
     margin-top: 32px;
+    position: relative;
   }
   &__name {
     width: 100%;
-    margin-top: 32px;
   }
   &__email {
     width: 231px;
@@ -39,11 +46,16 @@
   }
   &__phone {
     width: 231px;
+    color: rgb(119, 116, 116) !important;
+    font-family: "FuturaPTBook";
+  }
+  &__phone:focus {
+    color: #ffff !important;
   }
   &__text {
     height: 156px !important;
     width: 100% !important;
-    margin-top: 32px;
+
     font-family: "FuturaPTBook";
     font-style: normal;
     font-weight: normal;
@@ -55,10 +67,18 @@
     padding: 18px 10px 18px 24px;
     color: #ffff;
   }
+  &__text::placeholder {
+    font-family: Futura PT;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+  }
   &__file {
     margin-top: 32px;
   }
   &__label {
+    color: rgb(119, 116, 116);
     background-color: rgba(255, 255, 255, 0.1);
     height: 56px;
     display: inline-block;
@@ -72,6 +92,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: "FuturaPTBook";
   }
   &__checkbox {
     position: relative;
@@ -111,6 +132,7 @@
     position: relative;
     z-index: 2;
     font-size: 16px;
+    cursor: pointer;
   }
   &__checkboxLabel {
     display: flex;
@@ -127,6 +149,10 @@
     top: 0;
     left: 0;
     z-index: 1;
+  }
+  &__errorChecked::before {
+    background-color: rgba(236, 63, 63, 0.2);
+    border: 1px solid rgba(236, 63, 63, 0.3);
   }
   &__checkboxLabel::after {
     content: url("../../images/check.png");
@@ -149,9 +175,65 @@
     opacity: 1;
     border: 1px solid rgba(255, 255, 255, 0.3);
   }
+
   &__selectBlock {
     position: relative;
     margin-top: 48px;
+  }
+  &__blockName {
+    position: relative;
+    margin-top: 32px;
+  }
+  &__blockText {
+    position: relative;
+    margin-top: 32px;
+  }
+  &__error {
+    position: absolute;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #ff5858;
+    top: 60px;
+    display: none;
+  }
+  &__error_text {
+    top: 159px;
+  }
+  &__error_checked {
+    top: 36px;
+  }
+  &__errorInput {
+    background-color: rgba(236, 63, 63, 0.2) !important;
+  }
+  &__btnBlock {
+    display: flex;
+    justify-content: flex-start;
+  }
+  &__error_view {
+    display: block;
+  }
+  &__select_drop {
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: left;
+    left: 0;
+    right: 0;
+    transition: 0.3s ease;
+    max-height: 0px;
+    overflow: hidden;
+  }
+  &__select_dropView {
+    max-height: 100px;
+  }
+  &__select_drop > p {
+    border-bottom: 1px solid rgb(51, 49, 49);
+    padding: 0px 10px 5px 24px;
+    cursor: pointer;
+  }
+  &__select_drop > p:hover {
+    background-color: rgba(255, 255, 255, 0.171);
   }
 }
 
@@ -160,6 +242,9 @@
   top: 20px;
   z-index: 1;
   right: 24px;
+}
+.fa-paperclip {
+  color: white;
 }
 
 input[type="file"] {
@@ -180,7 +265,7 @@ input[type="file"] {
     &__selectBlock {
       margin-top: 36px;
     }
-    &__name {
+    &__blockName {
       margin-top: 24px;
     }
     &__phoneAndEmail {
@@ -194,7 +279,7 @@ input[type="file"] {
       line-height: 40px;
       width: 288px;
     }
-    &__text {
+    &__blockText {
       margin-top: 24px;
     }
     &__label {
@@ -227,7 +312,7 @@ input[type="file"] {
     &__selectBlock {
       margin-top: 36px;
     }
-    &__name {
+    &__blockName {
       margin-top: 24px;
     }
     &__phoneAndEmail {
@@ -241,7 +326,7 @@ input[type="file"] {
 
       width: 100%;
     }
-    &__text {
+    &__blockText {
       margin-top: 24px;
     }
     &__label {

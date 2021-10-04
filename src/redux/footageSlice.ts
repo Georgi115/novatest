@@ -1,12 +1,20 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+interface IFootageSlice {
+  count: string[];
+  maxCount: number;
+  loading: boolean;
+}
+
+const initialState: IFootageSlice = {
+  count: [""],
+  maxCount: 4,
+  loading: false,
+};
+
 const footageSlice = createSlice({
   name: "sliderSlice",
-  initialState: {
-    count: [""],
-    maxCount: 4,
-    loading: false,
-  },
+  initialState,
   reducers: {
     changeCount(state, action: PayloadAction) {
       state.loading = false;

@@ -1,7 +1,7 @@
 import "./HomePage.scss";
 import Header from "../../Components/Header/Header";
 import Promo from "../../Components/Promo/Promo";
-import Cast from "../../Components/Cust/Cast";
+import Cast from "../../Components/Cast/Cast";
 import Footage from "../../Components/Footage/Footage";
 import Merch from "../../Components/Merch/Merch";
 import Footer from "../../Components/Footer/Footer";
