@@ -10,7 +10,7 @@ const Header: FC = () => {
       <div className="container">
         <div className="header__content">
           <LogoImg nameClass={"header__img"} />
-          <Link className="header__link" to="/application">
+          <Link className="header__link" to="/application/form">
             <Button nameClass={"header__btn"} content={"Подключить подписку"} />
           </Link>
         </div>

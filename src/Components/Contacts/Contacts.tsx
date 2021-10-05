@@ -1,8 +1,11 @@
+import { FC } from "react";
 import "./Contacts.scss";
-
-const Contacts = () => {
+interface IPropsContacts {
+  nameClass: string;
+}
+const Contacts: FC<IPropsContacts> = ({ nameClass }) => {
   return (
-    <div className="contacts">
+    <div className={nameClass}>
       <div className="contacts__hotLine">
         <p>Наша горячая линия</p>
         <p>8 800 38 23 112</p>

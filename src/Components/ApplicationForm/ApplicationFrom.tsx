@@ -2,6 +2,7 @@ import Button from "../Button/Button";
 import "./ApplicationForm.scss";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../../redux";
+import { useHistory } from "react-router";
 import {
   changeInputPhone,
   changeInputName,
@@ -15,10 +16,15 @@ import {
 import React, { MouseEvent } from "react";
 
 const ApplicationForm = () => {
+  const history = useHistory();
   const dispatch = useAppDispatch();
+
   //Selectors
   const viewDropBlock = useSelector(
     (state: RootState): boolean => state.FormSlice.viewDropBlock
+  );
+  const complited = useSelector(
+    (state: RootState): boolean => state.FormSlice.complited
   );
   const error = useSelector(
     (state: RootState): boolean => state.FormSlice.error
@@ -58,9 +64,6 @@ const ApplicationForm = () => {
   const changeViewDrop = (e: React.MouseEvent<HTMLInputElement>) => {
     dispatch(ClickInputCity());
   };
-  const mouseUp = (e: any) => {
-    e.target.setSelectionRange(3, 3);
-  };
 
   const changePhone = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(changeInputPhone(e.target.value));
@@ -69,8 +72,11 @@ const ApplicationForm = () => {
     dispatch(changeInputName(e.target.value));
   };
   //handlers
+  if (complited) {
+    history.push("/application/form/formComplited");
+  }
   const matrix = phone.match(/\d/g);
-  console.log(city);
+
   return (
     <div className="applicationForm">
       <p className="applicationForm__title">Оставьте заявку</p>
@@ -152,7 +158,6 @@ const ApplicationForm = () => {
             Введите email
           </p>
           <input
-            onMouseUp={(e) => mouseUp(e)}
             onChange={(e) => changePhone(e)}
             value={phone}
             className={

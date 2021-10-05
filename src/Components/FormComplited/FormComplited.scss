@@ -1,0 +1,30 @@
+.formComplited {
+  text-align: left;
+  &__title {
+    font-family: "FuturaPTBook";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 56px;
+    width: 429px;
+    margin-bottom: 24px;
+  }
+  &__text {
+    font-family: "FuturaPTBook";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 40px;
+    width: 486px;
+  }
+  &__btn {
+    width: 240px;
+    height: 56px;
+    background-color: #ec3f3f;
+    color: #fff;
+  }
+  &__btnBlock {
+    width: 240px;
+  }
+}

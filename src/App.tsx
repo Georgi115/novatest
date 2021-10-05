@@ -7,7 +7,10 @@ function App() {
   return (
     <div className="App">
       <Route exact path="/" render={() => <HomePage />} />
-      <Route path="/application" render={() => <ApplicationPage />}></Route>
+      <Route
+        path="/application/form"
+        render={() => <ApplicationPage />}
+      ></Route>
     </div>
   );
 }
